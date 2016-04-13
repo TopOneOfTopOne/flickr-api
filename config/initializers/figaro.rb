@@ -1,0 +1,1 @@
+# Figaro.require_keys('flickr_api_key', 'flickr_secret')
