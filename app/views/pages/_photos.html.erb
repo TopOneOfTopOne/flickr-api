@@ -1,0 +1,35 @@
+<style>
+  .flickr ul
+  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .flickr ul li
+  {
+    border-bottom: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .flickr_photo
+  {
+    width: 75px;
+    height: 75px;
+    padding: 12px 10px 32px 13px;
+    margin: 0;
+  }
+</style>
+
+
+<div class="flickr">
+  <ul>
+    <% @photos_urls.each do |row| -%>
+        <li>
+          <% row.each do |photo_url| %>
+              <%= link_to(image_tag(photo_url, class: 'flickr_photo', :border => 0, :size => '75x75'), photo_url, target: '_blank') unless photo_url.nil? %>
+          <% end %>
+        </li>
+    <% end -%>
+  </ul>
+</div>
